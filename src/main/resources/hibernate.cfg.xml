@@ -15,7 +15,7 @@
     <property name="hibernate.connection.username">nhlllaphhpfxfm</property>
     <property name="hibernate.connection.password">1d24b3a0fc026999d7872796803cb04688e56e9c5bd7f6dd597620aebf606457</property>
 
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
 
     <mapping class="system.model.User"/>
