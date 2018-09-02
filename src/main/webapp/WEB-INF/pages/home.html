@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clicker" ng-controller="getController">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker</title>
+    <link rel="icon" href="/resources/icon/icon.png">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
+    <script src="/resources/js/angular.min.js"></script>
+    <script src="/resources/js/clicker.js"></script>
+</head>
+
+<body class="text-center">
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column" ng-init="getCurrentUser()">
+    <header class="masthead mb-auto">
+        <div class="inner">
+            <h3 class="masthead-brand">Clicker</h3>
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="http://localhost:8080/home">Home</a>
+                <a class="nav-link" ng-if="username=='anonymousUser'"
+                   href="http://localhost:8080/login">Login</a>
+                <a class="nav-link" ng-if="username=='anonymousUser'"
+                   href="http://localhost:8080/registration">Registration</a>
+                <a class="nav-link" ng-if="username!='anonymousUser'"
+                   href="http://localhost:8080/highscore">Highscores</a>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover" ng-init="getUsername()">
+        <h2 class="cover-heading" ng-if="username!='anonymousUser'">Hello, {{username}}!</h2>
+        <h1 class="cover-heading">Your score: {{getCounter()}}</h1>
+        <p class="lead">Do you not know what to do? It's time to become a clicker champion.
+        Click on the button as many times as possible. You should first login if you want to save your result.</p>
+        <div ng-controller="postController">
+            <form name="post" ng-submit="click()">
+                <button type="submit" class="btn btn-lg btn-secondary">Click me!</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="mastfoot mt-auto"></footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clicker" ng-controller="getController">
+<head>
+    <meta charset="UTF-8">
+    <title>Clicker</title>
+    <link rel="icon" href="/resources/icon/icon.png">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
+    <script src="/resources/js/angular.min.js"></script>
+    <script src="/resources/js/clicker.js"></script>
+</head>
+
+<body class="text-center">
+<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto" ng-init="getCurrentUser()">
+        <div class="inner" ng-init="getUsername()">
+            <nav class="nav nav-masthead justify-content-center">
+                <a class="nav-link active" href="http://localhost:8080/home">Home</a>
+                <a class="nav-link" ng-if="username=='anonymousUser'"
+                   href="http://localhost:8080/login">Login</a>
+                <a class="nav-link" ng-if="username=='anonymousUser'"
+                   href="http://localhost:8080/registration">Registration</a>
+                <a class="nav-link" ng-if="username!='anonymousUser'"
+                   href="http://localhost:8080/highscore">Highscores</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main role="main" class="inner cover" ng-controller="postController">
+        <h1 class="cover-heading">Clicker</h1>
+        <br>
+        <form class="form-signin text-center" ng-submit="submitRegistration()">
+            <input type="text" name="username" class="form-control" placeholder="nickname" ng-model="name">
+            <input type="password" name="password" class="form-control" placeholder="password" ng-model="password">
+            <br>
+            <button class="btn btn-primary btn-block" type="submit">Registration</button>
+            <br>
+            <h2 class="h6 mb-3 font-weight-normal">{{getMessage()}}</h2>
+        </form>
+        <br><br><br><br><br>
+    </main>
+    <footer class="mastfoot mt-auto"></footer>
+</div>
+
+</body>
+</html>
+
+
+
