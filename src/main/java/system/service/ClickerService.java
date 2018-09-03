@@ -69,4 +69,8 @@ public class ClickerService {
         }
         return false;
     }
+
+    public List<User> getChampions() {
+        return getAllUsers();
+    }
 }

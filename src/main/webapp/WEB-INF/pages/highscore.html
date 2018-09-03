@@ -12,30 +12,37 @@
 
 <body class="text-center">
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column" ng-init="getCurrentUser()">
-    <header class="masthead mb-auto" ng-init="getCurrentUser()">
-        <div class="inner" ng-init="getUsername()">
+    <header class="masthead mb-auto">
+        <div class="inner">
             <h3 class="masthead-brand">Clicker</h3>
             <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="http://localhost:8080/home">Home</a>
+                <a class="nav-link active" href="https://clicker1.herokuapp.com/home">Home</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="http://localhost:8080/login">Login</a>
+                   href="https://clicker1.herokuapp.com/login">Login</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="http://localhost:8080/registration">Registration</a>
+                   href="https://clicker1.herokuapp.com/registration">Registration</a>
                 <a class="nav-link" ng-if="username!='anonymousUser'"
-                   href="http://localhost:8080/highscore">Highscores</a>
+                   href="https://clicker1.herokuapp.com/highscore">Highscores</a>
             </nav>
         </div>
     </header>
 
-    <main role="main" class="inner cover">
-        <h1 class="cover-heading">Your score: {{getCounter()}}</h1>
-        <p class="lead">Do you not know what to do? It's time to become a clicker champion.
-            Click on the button as many times as possible. You should first login if you want to save your result.</p>
-        <div ng-controller="postController">
-            <form name="post" ng-submit="click()">
-                <button type="submit" class="btn btn-lg btn-secondary">Click me!</button>
-            </form>
-        </div>
+    <main role="main" class="inner cover" ng-init="getChampions()">
+        <h1 class="cover-heading">Champions:</h1>
+        <table class="table borderless bg-color3">
+            <thead>
+            <tr>
+                <th>Nickname</th>
+                <th>Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="champion in champions | orderBy: '-counter' | limitTo:5">
+                <td>{{champion.name}}</td>
+                <td>{{champion.counter}}</td>
+            </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer class="mastfoot mt-auto"></footer>

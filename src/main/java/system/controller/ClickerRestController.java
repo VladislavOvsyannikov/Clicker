@@ -35,6 +35,11 @@ public class ClickerRestController {
         return clickerService.getAllUsers();
     }
 
+    @RequestMapping(value = "/getChampions", method = RequestMethod.GET)
+    public List<User> getChampions(){
+        return clickerService.getChampions();
+    }
+
     @RequestMapping(value = "/click", method = RequestMethod.POST)
     public void click(){
         clickerService.click();

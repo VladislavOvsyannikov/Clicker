@@ -13,6 +13,13 @@ clicker.controller('getController', function ($scope, $http, $location, $window)
         });
     };
 
+    $scope.getChampions = function () {
+        var url = "getChampions";
+        $http.get(url, config).then(function (response) {
+            $scope.champions = response.data;
+        });
+    };
+
     $scope.getCurrentUser = function () {
         var url = "getCurrentUser";
         $http.get(url, config).then(function (response) {
