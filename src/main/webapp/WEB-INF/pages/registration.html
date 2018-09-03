@@ -14,14 +14,13 @@
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto" ng-init="getUsername()">
         <div class="inner">
-            <h3 class="masthead-brand">Clicker</h3>
             <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link active" href="https://clicker1.herokuapp.com/home">Home</a>
                 <a class="nav-link" href="https://clicker1.herokuapp.com/highscore">Highscores</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/login">Login</a>
+                   href="https://clicker1.herokuapp.com/login">Log in</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/registration">Registration</a>
+                   href="https://clicker1.herokuapp.com/registration">Sign up</a>
             </nav>
         </div>
     </header>
@@ -34,7 +33,7 @@
             <input type="text" name="username" class="form-control" placeholder="nickname" ng-model="name">
             <input type="password" name="password" class="form-control" placeholder="password" ng-model="password">
             <br>
-            <button class="btn btn-primary btn-block" type="submit">Registration</button>
+            <button class="btn btn-primary btn-block" type="submit">Sign up</button>
             <br>
             <h2 class="h6 mb-3 font-weight-normal">{{getMessage()}}</h2>
         </form>

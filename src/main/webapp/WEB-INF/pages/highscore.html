@@ -14,14 +14,13 @@
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column" ng-init="getCurrentUser()">
     <header class="masthead mb-auto" ng-init="getUsername()">
         <div class="inner">
-            <h3 class="masthead-brand">Clicker</h3>
             <nav class="nav nav-masthead justify-content-center">
                 <a class="nav-link active" href="https://clicker1.herokuapp.com/home">Home</a>
                 <a class="nav-link" href="https://clicker1.herokuapp.com/highscore">Highscores</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/login">Login</a>
+                   href="https://clicker1.herokuapp.com/login">Log in</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/registration">Registration</a>
+                   href="https://clicker1.herokuapp.com/registration">Sign up</a>
             </nav>
         </div>
     </header>

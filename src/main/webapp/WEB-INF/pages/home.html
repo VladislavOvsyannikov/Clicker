@@ -19,9 +19,9 @@
                 <a class="nav-link active" href="https://clicker1.herokuapp.com/home">Home</a>
                 <a class="nav-link" href="https://clicker1.herokuapp.com/highscore">Highscores</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/login">Login</a>
+                   href="https://clicker1.herokuapp.com/login">Log in</a>
                 <a class="nav-link" ng-if="username=='anonymousUser'"
-                   href="https://clicker1.herokuapp.com/registration">Registration</a>
+                   href="https://clicker1.herokuapp.com/registration">Sign up</a>
             </nav>
         </div>
     </header>
@@ -30,7 +30,7 @@
         <h2 class="cover-heading" ng-if="username!='anonymousUser'">Hello, {{username}}!</h2>
         <h1 class="cover-heading">Your score: {{getCounter()}}</h1>
         <p class="lead">Do you not know what to do? It's time to become a clicker champion.
-        Click on the button as many times as possible. You should first login if you want to save your result.</p>
+        Click on the button as many times as possible. You should first log in if you want to save your result.</p>
         <div ng-controller="postController">
             <form name="post" ng-submit="click()">
                 <button type="submit" class="btn btn-lg btn-secondary">Click me!</button>
